@@ -19,10 +19,16 @@ namespace BedeGaming
             try
             {
                 Console.Write("Please enter deposit money you would play with:");
-                mySlotMachine.Deposit = decimal.Parse(Console.ReadLine());
+                var deposit = decimal.Parse(Console.ReadLine());
 
                 Console.Write("Enter stake amount:");
-                mySlotMachine.StakeAmount = decimal.Parse(Console.ReadLine());
+                var stakeAmount = decimal.Parse(Console.ReadLine());
+
+                if (stakeAmount >= deposit)
+                    throw new Exception("Stake amount can not be equal or bigger than deposit");
+
+                mySlotMachine.Deposit = deposit;
+                mySlotMachine.StakeAmount = stakeAmount;
 
                 //start the game
                 var consoleKey = ConsoleKey.Enter;
@@ -63,6 +69,10 @@ namespace BedeGaming
             catch(FormatException e)
             {
                 Console.WriteLine("You provide incorect deposit amount or stack amount!!!");
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine(e.Message);
             }
         }
 

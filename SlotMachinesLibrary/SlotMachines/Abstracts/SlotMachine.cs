@@ -1,6 +1,7 @@
 ﻿using SlotMachinesLibrary.Paylines.Contracts;
 using SlotMachinesLibrary.SlotMachines.Models;
 using SlotMachinesLibrary.Slots.Contracts;
+using System;
 using System.Collections.Generic;
 
 namespace SlotMachinesLibrary.SlotMachines.Abstracts
@@ -35,13 +36,25 @@ namespace SlotMachinesLibrary.SlotMachines.Abstracts
 
         public decimal Deposit { 
             get{ return this._deposit; } 
-            set { this._deposit = value; }
+            set {
+
+                if (value <= 0)
+                    throw new Exception("Deposit can not be zero or negative.");
+
+                this._deposit = value; 
+            }
         }
 
         public decimal StakeAmount
         {
             get { return this._stakeAmount; }
-            set { this._stakeAmount = value; }
+            set {
+
+                if (value <= 0)
+                    throw new Exception("Stake amount. can not be zero or negative.");
+
+                this._stakeAmount = value; 
+            }
         }
 
         public IList<IPayline> CurrentPayLines
