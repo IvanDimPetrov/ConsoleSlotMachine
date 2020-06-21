@@ -36,8 +36,8 @@ namespace BedeGaming
                 Console.Write("Enter stake amount:");
                 var stakeAmount = decimal.Parse(Console.ReadLine());
 
-                if (stakeAmount >= deposit)
-                    throw new Exception("Stake amount can not be equal or bigger than deposit");
+                if (stakeAmount > deposit)
+                    throw new Exception("Stake amount can not be bigger than deposit");
 
                 mySlotMachine.Deposit = deposit;
                 mySlotMachine.StakeAmount = stakeAmount;
