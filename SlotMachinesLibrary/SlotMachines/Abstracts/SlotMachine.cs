@@ -51,7 +51,7 @@ namespace SlotMachinesLibrary.SlotMachines.Abstracts
             set {
 
                 if (value <= 0)
-                    throw new Exception("Stake amount. can not be zero or negative.");
+                    throw new Exception("Stake amount can not be zero or negative.");
 
                 this._stakeAmount = value; 
             }

@@ -17,7 +17,7 @@ namespace SlotMachinesLibrary.Paylines.Contracts
         void AddSlot(ISlot slot);
 
         /// <summary>
-        /// Return collection of slots of payline
+        /// Return collection of slots of a payline
         /// </summary>
         /// <returns></returns>
         IEnumerable<ISlot> GetAllSlots();

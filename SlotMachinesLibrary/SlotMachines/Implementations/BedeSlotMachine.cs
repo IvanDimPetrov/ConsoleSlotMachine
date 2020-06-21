@@ -11,7 +11,7 @@ namespace SlotMachinesLibrary.SlotMachines.Implementations
     /// <summary>
     /// Implementation of the slot machine PaylineWithWildCard
     /// </summary>
-    public class BedeSlotMachine : SlotMachine
+    public class BedeSlotMachine : SlotMachine 
     {
         /// <summary>
         /// Constructor of the BedeSlot Machine
